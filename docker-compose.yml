@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend.
+    ports:
+      - "5000:5000"
+    environment:
+      - MQTT_BROKER=broker
+      - MQTT_PORT=1883
+    volumes:
+      - ./backend/static:/app/static
+    networks:
+      - clbb
+
+  broker:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/log:/mosquitto/log
+    networks:
+      - clbb
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    networks:
+      - clbb
+    volumes:
+      - ./frontend:/frontend
+
+networks:
+  clbb:
+    external: true
+
+
