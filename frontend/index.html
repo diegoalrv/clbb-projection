@@ -51,7 +51,6 @@
 
     // Función para obtener y actualizar la imagen
     function updateImage() {
-        // http://localhost:8000/media/indicators/1/0000000.png
         fetch('http://localhost:9901/api/actions/get_image_data/')
             .then(response => {
                 if (!response.ok) {
@@ -61,7 +60,7 @@
             })
             .then(data => {
                 if (data.image_data) {
-                    image_url = "http://localhost:9900/media/"+data.image_data
+                    image_url = "http://localhost:9901/media/"+data.image_data
                     console.log(data.image_data);
                     console.log(image_url);
                     renderImagen(image_url);
