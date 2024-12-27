@@ -97,19 +97,21 @@
                 renderImagen($imagen.src);
                 break;
             case 'l':
-                escalaX = 9.299999999999983;
-                escalaY = 18.799999999999997;
-                keystoneContainer.style.transform = `matrix3d(-0.0767133, -1.02482, 0, -1.94e-05, 1.04147, 0.0155276, 0, 9.7e-06, 0, 0, 1, 0, 3940, 1595, 0, 1)`;
+                escalaX = 3.300000000000001;
+                escalaY = 4.6;
+                //keystoneContainer.style.transform = `matrix3d(-0.0511682, -1.01624, 0, -1.94e-05, 1.0287, 0.0112344, 0, 9.7e-06, 0, 0, 1, 0, 2628, 1154, 0, 1)`;
+                keystoneContainer.style.transform = `matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 648, 656, 0, 1)`;
+                //keystoneContainer.style.transform = `matrix3d(-0.0767133, -1.02482, 0, -1.94e-05, 1.04147, 0.0155276, 0, 9.7e-06, 0, 0, 1, 0, 3940, 1595, 0, 1)`;
                 renderImagen($imagen.src)
                 break;
-            case 'r':
-                escalaX = 9.199999999999983;
-                escalaY = 20.100000000000016;
-                keystoneContainer.style.transform = `matrix3d(-0.0149338, -1.02373, 0, -1.94e-05, 1.01058, 0.0149824, 0, 9.7e-06, 0, 0, 1, 0, 767, 1539, 0, 1)`
+            case 'q':
+                escalaX = 2.6000000000000005;
+                escalaY = 4.200000000000001;
+                //keystoneContainer.style.transform = `matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 407, 1154, 0, 1)`;
+                keystoneContainer.style.transform = `matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 541, 666, 0, 1)`;
+                //keystoneContainer.style.transform = `matrix3d(-0.0149338, -1.02373, 0, -1.94e-05, 1.01058, 0.0149824, 0, 9.7e-06, 0, 0, 1, 0, 767, 1539, 0, 1)`
                 renderImagen($imagen.src)
                 break;
-            
-            // Otros casos para manejar otras teclas si es necesario
         }
     });
 
