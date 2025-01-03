@@ -37,7 +37,6 @@
     function renderImagen(image_url) {
         if ($imagen) {
             // Añadir un parámetro de tiempo para evitar el caché
-            const timestamp = new Date().getTime();
             const imageUrlWithTimestamp = `${image_url}`;
             $imagen.setAttribute('src', imageUrlWithTimestamp);
             // Aplicar escala en ambos ejes (horizontal y vertical)
@@ -51,7 +50,7 @@
 
     // Función para obtener y actualizar la imagen
     function updateImage() {
-        fetch('http://localhost:9901/api/actions/get_image_data/')
+        fetch('http://192.168.31.120:8500/api/actions/get_image_data/')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -60,7 +59,7 @@
             })
             .then(data => {
                 if (data.image_data) {
-                    image_url = "http://localhost:9901/media/"+data.image_data
+                    image_url = "http://192.168.31.120:8500/media/"+data.image_data
                     console.log(data.image_data);
                     console.log(image_url);
                     renderImagen(image_url);
